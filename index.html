@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HyperCube</title>
+        
+	<!-- JQuery - Google CDN -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/vendor/jquery.touchSwipe/jquery.touchSwipe.js"></script>
+		
+	<!-- TOP - Weather -->
+	<script src="js/vendor/open-weather/openWeather.js"></script>
+	<link rel="stylesheet" href="js/vendor/swiper/idangerous.swiper.css" />
+	<script src="js/vendor/swiper/idangerous.swiper.js"></script>
+
+	<!-- FRONT - farbtastic -->
+	<script type="text/javascript" src="js/vendor/farbtastic/farbtastic.js"></script>
+	
+	<!-- LEFT - Canvas Animation -->
+	<script type="text/javascript" src="js/trail.js"></script>
+	
+	<!-- BACK - Google Maps API -->
+	<script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
+	
+	<!--BOTTOM - CoverFlow -->
+	<link rel="stylesheet" href="js/vendor/jquery.flipster/jquery.flipster.min.css"/>
+	<script src="js/vendor/jquery.flipster/jquery.flipster.js"></script>
+	
+	<link rel="stylesheet" href="css/hypercube.css"/>
+	<script type="text/javascript" src="js/hypercube.js"></script>
+	
+	<style media="place" type="text/css">
+		#target {
+            -ar-target: object("targets/lasmeninas");
+            -ar-position: coord(0, 0, 250);
+        }
+	</style>
+
+	<script type="text/javascript">
+        $(function() {
+		    initPlane();
+        });
+       
+        window.addEventListener("arwebapploaded", function() {
+   			bindRotateEvent();
+            letsee.addEventListener( "trackstart", "targets/lasmeninas", onTrackStart );
+            letsee.addEventListener( "trackmove", "targets/lasmeninas", renderCanvas );
+   		});
+	</script>
+</head>
+<body>
+	<div id="target">
+        <div id="cube">
+	        <div class="plane" id="top">
+				<div class="swiper-container">
+					<div id="weather" class="swiper-wrapper">
+						<div class="swiper-slide weather-wrapper" id="weather-wrapper1">
+							<img src="" class="weather-icon" id="weather-icon1" />
+							<div class="weather weather-place" id="weather-place1"></div>
+							<div class="weather weather-temperature" id="weather-temperature1"></div>
+							<span class="weather weather-detail weather-humidity" id="weather-humidity1"></span></p>
+							<span class="weather weather-detail weather-wind-speed" id="weather-wind-speed1"></span></p>
+							<span class="weather weather-detail weather-sunrise" id="weather-sunrise1"></span></p>
+							<span class="weather weather-detail weather-sunset" id="weather-sunset1"></span></p>
+						</div>
+						<div class="swiper-slide weather-wrapper" id="weather-wrapper2">
+							<img src="" class="weather-icon" id="weather-icon2" />
+							<div class="weather weather-place" id="weather-place2"></div>
+							<div class="weather weather-temperature" id="weather-temperature2"></div>
+							<span class="weather weather-detail weather-humidity" id="weather-humidity2"></span></p>
+							<span class="weather weather-detail weather-wind-speed" id="weather-wind-speed2"></span></p>
+							<span class="weather weather-detail weather-sunrise" id="weather-sunrise2"></span></p>
+							<span class="weather weather-detail weather-sunset" id="weather-sunset2"></span></p>
+						</div>
+						<div class="swiper-slide weather-wrapper" id="weather-wrapper3">
+							<img src="" class="weather-icon" id="weather-icon3" />
+							<div class="weather weather-place" id="weather-place3"></div>
+							<div class="weather weather-temperature" id="weather-temperature3"></div>
+							<span class="weather weather-detail weather-humidity" id="weather-humidity3"></span></p>
+							<span class="weather weather-detail weather-wind-speed" id="weather-wind-speed3"></span></p>
+							<span class="weather weather-detail weather-sunrise" id="weather-sunrise3"></span></p>
+							<span class="weather weather-detail weather-sunset" id="weather-sunset3"></span></p>
+						</div>
+						<div class="swiper-slide weather-wrapper" id="weather-wrapper4">
+							<img src="" class="weather-icon" id="weather-icon4" />
+							<div class="weather weather-place" id="weather-place4"></div>
+							<div class="weather weather-temperature" id="weather-temperature4"></div>
+							<span class="weather weather-detail weather-humidity" id="weather-humidity4"></span></p>
+							<span class="weather weather-detail weather-wind-speed" id="weather-wind-speed4"></span></p>
+							<span class="weather weather-detail weather-sunrise" id="weather-sunrise4"></span></p>
+							<span class="weather weather-detail weather-sunset" id="weather-sunset4"></span></p>
+						</div>
+						<div class="swiper-slide weather-wrapper" id="weather-wrapper5">
+							<img src="" class="weather-icon" id="weather-icon5" />
+							<div class="weather weather-place" id="weather-place5"></div>
+							<div class="weather weather-temperature" id="weather-temperature5"></div>
+							<span class="weather weather-detail weather-humidity" id="weather-humidity5"></span></p>
+							<span class="weather weather-detail weather-wind-speed" id="weather-wind-speed5"></span></p>
+							<span class="weather weather-detail weather-sunrise" id="weather-sunrise5"></span></p>
+							<span class="weather weather-detail weather-sunset" id="weather-sunset5"></span></p>
+						</div>
+					</div>
+				</div>
+        	</div>
+            <div class="plane" id="front">
+				<div class="center">
+					<object data="assets/html5_logo.svg" height="242" id="html5_svg" type="image/svg+xml" width="171"></object>
+				</div>
+    	    </div>
+        	<div class="plane" id="right" style="background-color:black;">
+				<video id="video" width="500" height="500" src="assets/yuna.mp4" preload="true" poster="assets/yuna.jpg" controls style="vertical-align:center;"></video>
+            </div>
+	        
+			<div class="plane" id="back">
+    	        <div id="map"></div>
+        	</div>
+            <div class="plane" id="left">
+	            <canvas id="world">
+					<p class="noCanvas">You need a <a href="http://www.google.com/chrome">modern browser</a> to view this.</p>
+				</canvas>
+    	    </div>
+        	<div class="plane" id="bottom">
+                <div id="coverflow">
+			  		<ul>
+		  				<li><img src="assets/coverflow/1.jpg" /></li>
+	  					<li><img src="assets/coverflow/2.jpg" /></li>
+						<li><img src="assets/coverflow/3.jpg" /></li>
+	  					<li><img src="assets/coverflow/4.jpg" /></li>
+	  					<li><img src="assets/coverflow/5.jpg" /></li>
+		  			</ul>
+				</div>
+            </div>
+        </div>
+    </div>
+    <img id="tempImage" src="assets/top.png" style="display: none;" />
+    <div id="picker"></div>
+</body>
+</html>

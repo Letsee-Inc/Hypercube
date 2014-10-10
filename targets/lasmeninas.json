@@ -1,0 +1,9 @@
+{
+	"name" : "Lasmeninas",
+	"desc" : "Lasmeninas",
+	"descriptors" : [ { 
+	    "target_id" : "306bcebda9e24e8a86d6c3e0dfd0946d",
+	    "target_name" : "lasmeninas",
+	    "target_data" : "lasmeninas.zip"
+	} ]
+}

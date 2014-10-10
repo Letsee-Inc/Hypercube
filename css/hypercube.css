@@ -1,0 +1,89 @@
+@-webkit-keyframes spin {
+  	from { -webkit-transform: rotateY(0deg); }
+  	to { -webkit-transform: rotateY(360deg); }
+}
+
+#target {
+    width: 500px;
+    height: 500px;
+    -webkit-transform-style: preserve-3d; 
+}
+#cube {
+    width: 100%;
+    height: 100%;
+ 	-webkit-transition: -webkit-transform 500ms linear;
+    -webkit-transform-style: preserve-3d;
+}
+.plane {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 1px solid #000000;
+	border-radius: 3px;
+    background: white;
+	text-align: center;
+	font-size: 50px;
+    -webkit-backface-visibility: hidden;
+}
+
+#top  { -webkit-transform: translateZ(250px); }
+#bottom { 
+	-webkit-transform: rotateX(180deg) translateZ(250px); 
+	background: #000;
+}
+#front { -webkit-transform: rotateX(-90deg) translateZ(250px); }
+#back { -webkit-transform: rotateX(90deg) rotateZ(180deg) translateZ(250px); }
+#left { -webkit-transform: rotateX(-90deg) rotateY(-90deg) translateZ(250px); }
+#right { 
+	-webkit-transform: rotateX(-90deg) rotateY(90deg) translateZ(250px); 
+	background: #fff;
+}
+
+.center {
+    width: 500px;
+    height: 500px;
+	display: table-cell !important;
+   	vertical-align: middle !important;
+   	text-align: center !important;
+}
+#map {
+    width: 100%;
+    height: 100%;
+}
+#html5_svg {
+  	-webkit-animation-name: spin; 
+  	-webkit-animation-duration: 7000ms;
+  	-webkit-animation-iteration-count: infinite; 
+  	-webkit-animation-timing-function: linear;
+}
+#picker {
+	position: absolute;
+	z-index: 999;
+	bottom: 10px;
+	right: 10px;
+}
+#flip img {
+	width: 500px;
+	height: 500px;
+}
+#coverflow {
+	margin-top: 120px;
+}
+#coverflow .flip-items {
+	width: 250px !important;
+	height: 250px !important; 
+}
+.swiper-container, .swiper-slide {
+	width: 500px;
+	height: 500px;
+}
+.weather-wrapper { width:500px; height:500px; overflow:hidden; position:relative; }
+.weather-icon { width:290px; height:205; position:absolute; top:36px; left:105px; }
+.weather { font-family:"Helvetica"; color:#FFFFFF; }
+.weather-place { font-size:55px; font-weight:600; margin-left:55px; position:absolute; top:263px; left:-15px; }
+.weather-temperature { font-size:79px; font-weight:lighter; margin-left:89px; position:absolute; top: 242px; left:255px; }
+.weather-detail { position:absolute; font-size:34px; font-weight:lighter; }
+.weather-humidity { left:122px; top:365px; }
+.weather-wind-speed { left:328px; top:365px; }
+.weather-sunrise { left:122px; top:426px; }
+.weather-sunset { left:328px; top:426px; }
