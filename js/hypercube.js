@@ -78,7 +78,7 @@ function onTrackStart() {
 	});
 	
 	// remove trackstart event
-	letsee.removeEventListener( "trackstart", "targets/lasmeninas", onTrackStart );
+	Letsee.removeEventListener( "trackstart", "targets/lasmeninas", onTrackStart );
 }
 
 function trySwiperStart() {

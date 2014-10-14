@@ -41,10 +41,10 @@
 		    initPlane();
         });
        
-        window.addEventListener("arwebapploaded", function() {
+        window.addEventListener("letsee.load", function() {
    			bindRotateEvent();
-            letsee.addEventListener( "trackstart", "targets/lasmeninas", onTrackStart );
-            letsee.addEventListener( "trackmove", "targets/lasmeninas", renderCanvas );
+            Letsee.addEventListener( "trackstart", "targets/lasmeninas", onTrackStart );
+            Letsee.addEventListener( "trackmove", "targets/lasmeninas", renderCanvas );
    		});
 	</script>
 </head>
